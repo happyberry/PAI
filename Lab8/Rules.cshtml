@@ -1,0 +1,28 @@
+﻿@{
+    var rules = new List<String>();
+    if (Session["rules"] != null)
+    {
+        rules = (List<String>)Session["rules"];
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <form action="~/Response.cshtml" method="post">
+        <label>
+            Zasada:<input type="text" name="rule"><br />
+        </label>
+        <input type="submit">
+    </form>
+    <ol>
+        @foreach (var rule in rules)
+            {
+                <li>@rule</li>
+            }
+    </ol>
+</body>
+</html>
