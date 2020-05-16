@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WebAppE.Models.Song>
+
+@{
+    ViewBag.Title = "Songs";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@Html.Partial("_SongsList", Model)
